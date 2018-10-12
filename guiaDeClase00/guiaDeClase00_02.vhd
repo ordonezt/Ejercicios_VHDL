@@ -15,7 +15,7 @@ end guiaDeClase00_02;
 
 architecture ARCH_guiaDeClase00_02 of guiaDeClase00_02 is
 
-signal X: std_logic_vector;
+signal X: std_logic_vector(1 downto 0);
 
 begin
 

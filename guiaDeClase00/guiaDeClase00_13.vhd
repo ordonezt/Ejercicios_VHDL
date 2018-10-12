@@ -24,7 +24,7 @@ begin
 div1 <= entrada;
 div2 <= entrada(7) & entrada(7 downto 1);
 div4 <= entrada(7) & entrada(7) & entrada(7 downto 2);
-div2 <= entrada(7) & entrada(7) & entrada(7) & entrada(7 downto 3);
+div8 <= entrada(7) & entrada(7) & entrada(7) & entrada(7 downto 3);
 
 with div select salida <= 
 									div1 	when "00",
