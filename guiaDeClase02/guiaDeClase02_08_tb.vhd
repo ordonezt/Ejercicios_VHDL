@@ -79,20 +79,20 @@ BEGIN
       wait for 100 ns;
 		
 		wait until Falling_Edge(clk);
-		rst <= '1';
+		--rst <= '1';
 		wait until Falling_Edge(clk);
 		rst <= '0';
-		Dl <= '0';
-		wait until Falling_Edge(clk);
-		Dl <= '1';
-		wait until Falling_Edge(clk);
-		Dl <= '0';
-		wait until Falling_Edge(clk);
+		Dr <= '0';
 		wait until Falling_Edge(clk);
 		Dr <= '1';
-		Dir <= '1';
 		wait until Falling_Edge(clk);
 		Dr <= '0';
+		wait until Falling_Edge(clk);
+		wait until Falling_Edge(clk);
+		Dl <= '1';
+		Dir <= '1';
+		wait until Falling_Edge(clk);
+		Dl <= '0';
 		
       wait;
    end process;

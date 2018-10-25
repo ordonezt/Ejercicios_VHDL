@@ -41,24 +41,17 @@ begin
 		if Rising_Edge(clk) then
 			if rst = '1' then
 				Q_now <= D;
-				Q_nxt <= D;
 			else
-				Q_now <= Q_nxt;
+				
 				
 				if Ena = '1' then		--Si esta habilitado, desplazo
-					
-					if dir = '0' then	--Ascendente (desp izq)
-						Q_nxt <= Q_nxt(N-2 downto 0) & Dl;
-					
-					else					--Descendente (desp der)
-						Q_nxt <= Dr & Q_nxt(N-1 downto 1);
-					
-					end if;
+					Q_now <= Q_nxt;
 				end if;
 			end if;
 		end if;
 	end process P1;
 	
+	Q_nxt <= Q_now(N-2 downto 0) & Dr when dir = '0' else Dl & Q_now(N-1 downto 1);
 	Q <= Q_now;
 
 end ARCH_guiaDeClase02_08;
