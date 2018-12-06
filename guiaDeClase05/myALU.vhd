@@ -174,6 +174,14 @@ begin
 		save => save,
 		D => AcatB,
 		Q => Reg);
-		
+	
+	Inst_Rotador:entity work.Rotador(ARCH_Rotador) 
+	Generic Map( dataSize => dataSize)
+	PORT MAP(
+		Rot => A,
+		DataIn => B,
+		DataOut => ParcialD1,
+		CantRot => ParcialD0
+	);
 end ARCH_myALU;
 

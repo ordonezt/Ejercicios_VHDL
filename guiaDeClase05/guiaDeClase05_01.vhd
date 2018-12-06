@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity mySerialALU is
 	Generic (baudRate : integer := 9600;
-				sysClk: integer := 50000000;
+				sysClk: integer := 100000000;
 				dataSize : integer := 8);
 	Port ( 	clk: in std_logic;
 				rst: in std_logic;
